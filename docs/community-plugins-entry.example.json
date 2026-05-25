@@ -1,0 +1,7 @@
+{
+  "id": "desktop-sticky-notes",
+  "name": "Desktop Sticky Notes",
+  "author": "Lech-S",
+  "description": "Pin Obsidian notes as Windows-style desktop sticky notes with auto-hiding toolbar, always-on-top, remembered size, and auto-save.",
+  "repo": "Lech-S/obsidian-desktop-sticky-notes"
+}

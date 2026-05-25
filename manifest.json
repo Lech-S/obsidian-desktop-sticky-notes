@@ -1,0 +1,10 @@
+{
+  "id": "desktop-sticky-notes",
+  "name": "Desktop Sticky Notes",
+  "version": "0.1.4",
+  "minAppVersion": "1.5.0",
+  "description": "Pin Obsidian notes as Windows-style desktop sticky notes with auto-hiding toolbar and hidden-titlebar chrome.",
+  "author": "Lech-S",
+  "authorUrl": "https://github.com/Lech-S",
+  "isDesktopOnly": true
+}

@@ -1,0 +1,468 @@
+/* Desktop Sticky Notes - Windows Sticky Notes inspired chrome */
+html.desktop-sticky-popout-window,
+body.desktop-sticky-popout-window {
+  background: transparent !important;
+  overflow: hidden !important;
+}
+
+body.desktop-sticky-popout-window {
+  --sticky-window-radius: 9px;
+}
+
+html.desktop-sticky-titlebar-hidden .titlebar,
+body.desktop-sticky-titlebar-hidden .titlebar,
+html.desktop-sticky-titlebar-hidden .titlebar-button-container,
+body.desktop-sticky-titlebar-hidden .titlebar-button-container,
+html.desktop-sticky-titlebar-hidden .titlebar-drag-region,
+body.desktop-sticky-titlebar-hidden .titlebar-drag-region,
+html.desktop-sticky-titlebar-hidden .titlebar-text,
+body.desktop-sticky-titlebar-hidden .titlebar-text,
+html.desktop-sticky-titlebar-hidden .workspace-tab-header-container,
+body.desktop-sticky-titlebar-hidden .workspace-tab-header-container,
+html.desktop-sticky-titlebar-hidden .workspace-ribbon,
+body.desktop-sticky-titlebar-hidden .workspace-ribbon,
+html.desktop-sticky-titlebar-hidden .status-bar,
+body.desktop-sticky-titlebar-hidden .status-bar,
+html.desktop-sticky-titlebar-hidden .sidebar-toggle-button,
+body.desktop-sticky-titlebar-hidden .sidebar-toggle-button,
+html.desktop-sticky-titlebar-hidden .workspace-sidedock-vault-profile,
+body.desktop-sticky-titlebar-hidden .workspace-sidedock-vault-profile {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: 0 !important;
+  max-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+html.desktop-sticky-titlebar-hidden .app-container,
+body.desktop-sticky-titlebar-hidden .app-container,
+html.desktop-sticky-titlebar-hidden .horizontal-main-container,
+body.desktop-sticky-titlebar-hidden .horizontal-main-container,
+html.desktop-sticky-titlebar-hidden .workspace,
+body.desktop-sticky-titlebar-hidden .workspace,
+html.desktop-sticky-titlebar-hidden .workspace-split,
+body.desktop-sticky-titlebar-hidden .workspace-split,
+html.desktop-sticky-titlebar-hidden .workspace-leaf,
+body.desktop-sticky-titlebar-hidden .workspace-leaf,
+html.desktop-sticky-titlebar-hidden .workspace-leaf-content,
+body.desktop-sticky-titlebar-hidden .workspace-leaf-content,
+html.desktop-sticky-titlebar-hidden .view-content,
+body.desktop-sticky-titlebar-hidden .view-content {
+  border: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+.workspace-leaf-content[data-type="desktop-sticky-note"] .view-header {
+  display: none !important;
+}
+
+.workspace-leaf-content[data-type="desktop-sticky-note"] .view-content {
+  padding: 0 !important;
+  overflow: hidden !important;
+  background: transparent !important;
+}
+
+.desktop-sticky-note-host {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 0 !important;
+  overflow: hidden;
+  background: transparent !important;
+}
+
+.desktop-sticky-note {
+  --sticky-bg: #fff6c2;
+  --sticky-toolbar: #ffed8a;
+  --sticky-toolbar-line: rgba(122, 92, 0, 0.12);
+  --sticky-text: #211f16;
+  --sticky-muted: rgba(33, 31, 22, 0.62);
+  --sticky-button-hover: rgba(0, 0, 0, 0.075);
+  --sticky-button-active: rgba(0, 0, 0, 0.13);
+  --sticky-button-fg: var(--sticky-accent);
+  --sticky-button-danger: #e81123;
+  --sticky-accent: #7a5800;
+  --sticky-selection: rgba(128, 88, 0, 0.2);
+  --sticky-shadow: 0 16px 38px rgba(0, 0, 0, 0.2), 0 2px 9px rgba(0, 0, 0, 0.14);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 180px;
+  overflow: hidden;
+  border: 1px solid rgba(88, 70, 0, 0.13);
+  border-radius: var(--sticky-window-radius, 9px);
+  background: var(--sticky-bg);
+  box-shadow: var(--sticky-shadow);
+  color: var(--sticky-text);
+  font-family: "Segoe UI", "Microsoft YaHei UI", var(--font-interface), sans-serif;
+  font-size: 14px;
+}
+
+.desktop-sticky-note-yellow {
+  --sticky-bg: #fff6c2;
+  --sticky-toolbar: #ffed8a;
+  --sticky-toolbar-line: rgba(122, 92, 0, 0.14);
+  --sticky-accent: #7a5800;
+  --sticky-button-fg: var(--sticky-accent);
+}
+
+.desktop-sticky-note-blue {
+  --sticky-bg: #dff1ff;
+  --sticky-toolbar: #bfdef7;
+  --sticky-toolbar-line: rgba(0, 85, 136, 0.14);
+  --sticky-accent: #005a9e;
+  --sticky-button-fg: var(--sticky-accent);
+}
+
+.desktop-sticky-note-green {
+  --sticky-bg: #e1f7d4;
+  --sticky-toolbar: #c6edae;
+  --sticky-toolbar-line: rgba(48, 100, 0, 0.14);
+  --sticky-accent: #3a7600;
+  --sticky-button-fg: var(--sticky-accent);
+}
+
+.desktop-sticky-note-pink {
+  --sticky-bg: #ffddea;
+  --sticky-toolbar: #ffc1d7;
+  --sticky-toolbar-line: rgba(145, 30, 78, 0.14);
+  --sticky-accent: #9f2957;
+  --sticky-button-fg: var(--sticky-accent);
+}
+
+.desktop-sticky-note-purple {
+  --sticky-bg: #eadfff;
+  --sticky-toolbar: #d8c5ff;
+  --sticky-toolbar-line: rgba(88, 42, 142, 0.14);
+  --sticky-accent: #5b2f91;
+  --sticky-button-fg: var(--sticky-accent);
+}
+
+.desktop-sticky-note-gray {
+  --sticky-bg: #f4f4f4;
+  --sticky-toolbar: #e6e6e6;
+  --sticky-toolbar-line: rgba(0, 0, 0, 0.1);
+  --sticky-accent: #3b3b3b;
+  --sticky-button-fg: var(--sticky-accent);
+}
+
+.theme-dark .desktop-sticky-note {
+  --sticky-text: #1f1f1f;
+  --sticky-muted: rgba(31, 31, 31, 0.62);
+}
+
+.desktop-sticky-header {
+  flex: 0 0 36px;
+  display: flex;
+  align-items: stretch;
+  min-height: 36px;
+  height: 36px;
+  padding: 0;
+  border-bottom: 1px solid var(--sticky-toolbar-line);
+  background: var(--sticky-toolbar);
+  user-select: none;
+  overflow: hidden;
+  opacity: 1;
+  transform: translateY(0);
+  -webkit-app-region: drag;
+  transition: flex-basis 180ms ease, min-height 180ms ease, height 180ms ease, opacity 140ms ease, transform 180ms ease, border-color 140ms ease;
+}
+
+.desktop-sticky-note.is-header-hidden .desktop-sticky-header {
+  flex-basis: 0;
+  min-height: 0;
+  height: 0;
+  border-bottom-color: transparent;
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+}
+
+.desktop-sticky-header-spacer {
+  display: none !important;
+  flex: 0 0 0 !important;
+  width: 0 !important;
+  min-width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+.desktop-sticky-actions {
+  position: relative;
+  z-index: 2;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  min-width: 0;
+  height: 100%;
+  -webkit-app-region: no-drag;
+}
+
+.desktop-sticky-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 6px 0 14px;
+  line-height: 1.2;
+  align-self: stretch;
+  text-align: left;
+  -webkit-app-region: drag;
+}
+
+.desktop-sticky-title-text {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--sticky-text);
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: 0.005em;
+}
+
+.desktop-sticky-title-path {
+  display: none !important;
+}
+
+.desktop-sticky-icon-button,
+.desktop-sticky-icon-button:hover,
+.desktop-sticky-icon-button:focus,
+.desktop-sticky-icon-button:active {
+  box-shadow: none !important;
+  border: 0 !important;
+  outline: none;
+}
+
+.desktop-sticky-icon-button {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 0;
+  background: transparent !important;
+  color: var(--sticky-accent) !important;
+  cursor: default;
+  opacity: 1 !important;
+  filter: none !important;
+  -webkit-app-region: no-drag;
+}
+
+.desktop-sticky-icon-button:hover,
+.desktop-sticky-icon-button:focus-visible {
+  background: var(--sticky-button-hover) !important;
+  color: var(--sticky-accent) !important;
+  opacity: 1 !important;
+}
+
+.desktop-sticky-icon-button:active {
+  background: var(--sticky-button-active) !important;
+}
+
+.desktop-sticky-icon-button .svg-icon,
+.desktop-sticky-icon-button svg {
+  width: 15px;
+  height: 15px;
+  color: currentColor !important;
+  opacity: 1 !important;
+  filter: none !important;
+  stroke: currentColor !important;
+  stroke-width: 1.75;
+}
+
+.desktop-sticky-icon-button svg * {
+  color: currentColor !important;
+  opacity: 1 !important;
+  filter: none !important;
+  stroke: currentColor !important;
+  stroke-opacity: 1 !important;
+}
+
+.desktop-sticky-note.is-pinned .desktop-sticky-icon-button.is-pin {
+  color: var(--sticky-accent);
+  opacity: 1 !important;
+  background: transparent !important;
+}
+
+.desktop-sticky-note.is-pinned .desktop-sticky-icon-button.is-pin:hover,
+.desktop-sticky-note.is-pinned .desktop-sticky-icon-button.is-pin:focus-visible {
+  background: var(--sticky-button-hover) !important;
+}
+
+.desktop-sticky-icon-button.is-remove:hover,
+.desktop-sticky-icon-button.is-remove:focus-visible {
+  color: var(--sticky-button-danger);
+}
+
+.desktop-sticky-icon-button.is-close:hover,
+.desktop-sticky-icon-button.is-close:focus-visible {
+  background: var(--sticky-button-danger) !important;
+  color: #ffffff;
+}
+
+.desktop-sticky-icon-button.is-close:active {
+  background: #c50f1f !important;
+  color: #ffffff;
+}
+
+.desktop-sticky-icon-button.is-close:hover svg,
+.desktop-sticky-icon-button.is-close:focus-visible svg,
+.desktop-sticky-icon-button.is-close:active svg,
+.desktop-sticky-icon-button.is-close:hover svg *,
+.desktop-sticky-icon-button.is-close:focus-visible svg *,
+.desktop-sticky-icon-button.is-close:active svg * {
+  color: #ffffff !important;
+  stroke: currentColor !important;
+}
+
+.desktop-sticky-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  background: var(--sticky-bg);
+  scrollbar-color: rgba(0, 0, 0, 0.22) transparent;
+  scrollbar-width: thin;
+}
+
+.desktop-sticky-note.is-header-hidden .desktop-sticky-body,
+.desktop-sticky-note.is-header-hidden .desktop-sticky-editor,
+.desktop-sticky-note.is-header-hidden .desktop-sticky-preview {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.desktop-sticky-note.is-header-hidden .desktop-sticky-body::-webkit-scrollbar,
+.desktop-sticky-note.is-header-hidden .desktop-sticky-editor::-webkit-scrollbar,
+.desktop-sticky-note.is-header-hidden .desktop-sticky-preview::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+
+.desktop-sticky-editor {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  resize: none;
+  padding: 15px 18px 18px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--sticky-text);
+  caret-color: var(--sticky-text);
+  font-family: "Segoe UI", "Microsoft YaHei UI", var(--font-text), sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.desktop-sticky-editor::selection,
+.desktop-sticky-preview ::selection {
+  background: var(--sticky-selection);
+}
+
+.desktop-sticky-editor::placeholder {
+  color: var(--sticky-muted);
+}
+
+.desktop-sticky-preview {
+  min-height: 100%;
+  padding: 12px 18px 20px;
+  background: transparent;
+  color: var(--sticky-text);
+  font-family: "Segoe UI", "Microsoft YaHei UI", var(--font-text), sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.desktop-sticky-preview.markdown-rendered,
+.desktop-sticky-preview.markdown-preview-view {
+  background: transparent;
+  color: var(--sticky-text);
+}
+
+.desktop-sticky-preview > :first-child {
+  margin-top: 0 !important;
+}
+
+.desktop-sticky-preview h1,
+.desktop-sticky-preview h2,
+.desktop-sticky-preview h3,
+.desktop-sticky-preview h4,
+.desktop-sticky-preview h5,
+.desktop-sticky-preview h6 {
+  color: var(--sticky-text);
+  margin: 0.65em 0 0.35em;
+  border: 0;
+  font-weight: 650;
+}
+
+.desktop-sticky-preview p,
+.desktop-sticky-preview ul,
+.desktop-sticky-preview ol,
+.desktop-sticky-preview blockquote {
+  margin-block-start: 0.45em;
+  margin-block-end: 0.45em;
+}
+
+.desktop-sticky-preview a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.desktop-sticky-preview hr {
+  border: 0;
+  border-top: 1px solid var(--sticky-toolbar-line);
+}
+
+.desktop-sticky-preview pre,
+.desktop-sticky-preview code {
+  background: rgba(0, 0, 0, 0.075);
+  color: inherit;
+  border-radius: 5px;
+}
+
+.desktop-sticky-preview blockquote {
+  border-color: rgba(0, 0, 0, 0.2);
+  color: var(--sticky-text);
+}
+
+.desktop-sticky-footer,
+.desktop-sticky-status,
+.desktop-sticky-source {
+  display: none !important;
+}
+
+.desktop-sticky-note-missing {
+  padding: 16px;
+  gap: 10px;
+  background: #fff6c2;
+}
+
+.desktop-sticky-note-missing button {
+  width: fit-content;
+}
+
+.desktop-sticky-settings-desc,
+.desktop-sticky-empty {
+  color: var(--text-muted);
+}
