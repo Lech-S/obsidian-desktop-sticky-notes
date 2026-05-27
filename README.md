@@ -52,39 +52,4 @@ Open the command palette and run one of the commands below:
 You can also right-click a Markdown file in the file explorer and choose `贴到桌面便签`.
 
 ## Development
-
-```bash
-npm install
-npm run dev
-npm run build
-```
-
-For local testing, copy or symlink this repository into:
-
-```text
-<Vault>/.obsidian/plugins/desktop-sticky-notes/
-```
-
-Reload Obsidian and enable the plugin.
-
-## Releasing
-
-For first-time GitHub publishing and Obsidian community plugin submission, see:
-
-```text
-docs/PUBLISHING_GUIDE.zh-CN.md
-```
-
-Before publishing, replace the placeholders listed in:
-
-```text
-TODO_BEFORE_PUBLISHING.md
-```
-
-## Important notes
-
-This plugin is desktop-only. It uses Obsidian pop-out windows plus Electron APIs for always-on-top, opacity, taskbar, sizing, and titlebar behavior. Obsidian creates the actual Electron window, so native title-bar behavior can still differ by Obsidian version and operating system.
-
-## License
-
-MIT
+The plug-in is developed with the help of AI tools, and the test is only completed on the windows client side. If you encounter any problems during use, please give feedback.
