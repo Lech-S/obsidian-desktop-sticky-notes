@@ -2,7 +2,8 @@
 
 把 Obsidian Markdown 笔记像 Windows 便签一样贴在桌面上。
 
-![Desktop Sticky Notes screenshot](docs/images/desktop-sticky-notes-v0.1.4.png)
+
+![Uploading PixPin_2026-05-27_17-10-56.png…]()
 
 ## 功能
 
