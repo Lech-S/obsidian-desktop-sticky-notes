@@ -22,7 +22,7 @@ Pin Obsidian Markdown notes as Windows-style desktop sticky notes.
 
 ### Manual installation
 
-Download these files from the latest GitHub Release:
+Download the desktop-sticky-notes folder in the Release, which contains three files:
 
 ```text
 main.js
@@ -33,7 +33,7 @@ styles.css
 Copy them into:
 
 ```text
-<Vault>/.obsidian/plugins/desktop-sticky-notes/
+<Vault>/.obsidian/plugins/
 ```
 
 Then enable the plugin from Obsidian Settings -> Community plugins.
