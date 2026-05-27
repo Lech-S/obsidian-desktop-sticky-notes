@@ -49,23 +49,4 @@ styles.css
 也可以在文件列表中右键 Markdown 文件，选择 `贴到桌面便签`。
 
 ## 开发
-
-```bash
-npm install
-npm run dev
-npm run build
-```
-
-## 发布指南
-
-第一次发布到 GitHub 或 Obsidian 社区插件目录，请看：
-
-```text
-docs/PUBLISHING_GUIDE.zh-CN.md
-```
-
-发布前还需要检查：
-
-```text
-TODO_BEFORE_PUBLISHING.md
-```
+插件借助AI工具完成开发，仅在windows客户端完成测试，使用过程中如遇问题，欢迎反馈。
