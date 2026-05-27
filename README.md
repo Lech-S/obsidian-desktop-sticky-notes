@@ -1,6 +1,7 @@
 # Desktop Sticky Notes
 
 Pin Obsidian Markdown notes as Windows-style desktop sticky notes.
+
 ![PixPin_2026-05-27_17-10-56.png](https://obsidian-picgo-sunbo.oss-cn-shenzhen.aliyuncs.com/obsidian-picgo/202605271713281.png)
 
 [中文说明](README.zh-CN.md) | [Publishing guide in Chinese](docs/PUBLISHING_GUIDE.zh-CN.md)
