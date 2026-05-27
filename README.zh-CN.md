@@ -2,8 +2,7 @@
 
 把 Obsidian Markdown 笔记像 Windows 便签一样贴在桌面上。
 
-
-![Uploading PixPin_2026-05-27_17-10-56.png…]()
+![PixPin_2026-05-27_17-10-56.png](https://obsidian-picgo-sunbo.oss-cn-shenzhen.aliyuncs.com/obsidian-picgo/202605271713281.png)
 
 ## 功能
 
