@@ -2,7 +2,6 @@
 
 Pin Obsidian Markdown notes as Windows-style desktop sticky notes.
 
-![Desktop Sticky Notes screenshot](docs/images/desktop-sticky-notes-v0.1.4.png)
 
 [中文说明](README.zh-CN.md) | [Publishing guide in Chinese](docs/PUBLISHING_GUIDE.zh-CN.md)
 
