@@ -19,7 +19,7 @@
 
 ### 手动安装
 
-下载 Release 中的 3 个文件：
+下载 Release 中的 desktop-sticky-notes文件夹，内部包含3 个文件：
 
 ```text
 main.js
@@ -30,7 +30,7 @@ styles.css
 放到你的库目录：
 
 ```text
-<Vault>/.obsidian/plugins/desktop-sticky-notes/
+<Vault>/.obsidian/plugins/
 ```
 
 然后在 Obsidian 中进入 `设置 -> 第三方插件`，启用 Desktop Sticky Notes。
